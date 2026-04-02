@@ -13,7 +13,7 @@ ACTIVITY_FILE = DATA_DIR / "activity.json"
 
 def init_data():
     """Initialize data files"""
-    DATA_DIR.mkdir(exist_ok=True)
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
     for f in [MED_FILE, WATER_FILE, ACTIVITY_FILE]:
         if not f.exists():
             with open(f, 'w') as f:
